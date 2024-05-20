@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkfront_dig"]=self["webpackChunkfront_dig"]||[]).push([[429],{262:function(n,r){r.A=(n,r)=>{const t=n.__vccOpts||n;for(const[u,c]of r)t[u]=c;return t}},429:function(n,r,t){t.r(r),t.d(r,{default:function(){return s}});var u=t(641);function c(n,r){return(0,u.uX)(),(0,u.CE)("div",null," 这是首页 ")}var e=t(262);const f={},o=(0,e.A)(f,[["render",c]]);var s=o}}]);
-//# sourceMappingURL=429.2b7b138b.js.map

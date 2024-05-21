@@ -8,7 +8,7 @@
           <el-button type="danger">取消</el-button>
         </div>
         <div class="demo-image">
-            <el-image v-if="!isImageBShow" style="width: 500px; height: 500px" :src="urlA" fit="contain"></el-image>
+            <el-image v-if="isImageAShow" style="width: 500px; height: 500px" :src="urlA" fit="contain"></el-image>
             <el-image v-if="isImageBShow" style="width: 500px; height: 500px" :src="urlB" fit="contain"></el-image>
         </div>
     </div>
@@ -20,10 +20,12 @@ import { ref } from 'vue'
 const urlA = require("@/assets/A.png") //A图片的位置
 const urlB = require("@/assets/B.png") //B图片的位置
 
+const isImageAShow = ref(true) //图片A是否显示 （默认显示）
 const isImageBShow = ref(false) //图片B是否显示 （默认不显示）
 
 const clickPay = () => //支付按钮按下
 {
+    isImageAShow.value = false //图片A消失
     isImageBShow.value = true //图片B显示
 }
 </script>

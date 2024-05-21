@@ -8,9 +8,9 @@
           <el-button type="danger">取消</el-button>
         </div>
         <div class="demo-image">
-            <el-image style="width: 500px; height: 500px" :src="urlA" fit="contain"></el-image>
+            <el-image v-if="!isImageBShow" style="width: 500px; height: 500px" :src="urlA" fit="contain"></el-image>
+            <el-image v-if="isImageBShow" style="width: 500px; height: 500px" :src="urlB" fit="contain"></el-image>
         </div>
-        <el-image v-if="isImageBShow" style="width: 500px; height: 500px" :src="urlB" fit="contain"></el-image>
     </div>
 </template>
 

@@ -17,7 +17,7 @@
             <span class="app-menu-title-span-small">中心</span>
           </el-menu-item>
           <div class="flex-grow-10"></div>
-          <el-menu-item index="Hfiles">
+          <el-menu-item index="personal">
             <span class="app-menu-item-span">个人中心</span>
           </el-menu-item>
           <el-switch

@@ -60,7 +60,7 @@
             <template #footer>
                 <div>
                     <el-button @click="dialogVisible = false">取消</el-button>
-                    <el-button type="primary" @click="dialogVisible = false">
+                    <el-button type="primary" @click="clickConfirm">
                     确认
                     </el-button>
                 </div>
@@ -71,6 +71,9 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
 
 const urlA = require("@/assets/A.jpg") //A图片的位置
 const urlB = require("@/assets/B.jpg") //B图片的位置
@@ -88,6 +91,18 @@ const clickBuy = (num:any) =>
 {
     greenCostNow.value = num
     dialogVisible.value = true
+}
+
+const clickConfirm = () =>
+{
+    router.push
+    ({
+        path: '/personal',
+        query:
+        {
+            isBuy: 1,
+        },
+    })
 }
 
 </script>

@@ -1,31 +1,65 @@
 <template>
     <div>
-        云种植
         <div class="mb-4">
-          <el-button color="#a0cfff">加入购物车</el-button>
-          <el-button type="success" @click="clickPay">支付</el-button>
-          <el-button type="warning">收藏</el-button>
-          <el-button type="danger">取消</el-button>
+          <el-button color="#a0cfff" >装置1</el-button>
         </div>
         <div class="demo-image">
-            <el-image v-if="isImageAShow" style="width: 500px; height: 500px" :src="urlA" fit="contain"></el-image>
-            <el-image v-if="isImageBShow" style="width: 500px; height: 500px" :src="urlB" fit="contain"></el-image>
+            <el-image  style="width: 300px; height: 300px" :src="urlA" fit="contain"></el-image>
         </div>
+        <div class="demo-image">
+            <el-image  style="width: 40px; height: 40px" :src="urlE" fit="contain"></el-image>
+            316 <el-font style="font-size: 40px;"></el-font>
+        </div>
+        <div class="mb-4">
+        <el-button type="danger">购买</el-button>
+        </div>
+        <div class="mb-4">   
+          <el-button color="#a0cfff" >装置2</el-button>
+        </div>
+        <div class="demo-image">
+            <el-image  style="width: 300px; height: 300px" :src="urlB" fit="contain"></el-image>
+        </div>
+        <div class="demo-image">
+            <el-image  style="width: 40px; height: 40px" :src="urlE" fit="contain"></el-image>
+            176
+        </div>
+        <div class="mb-4">
+        <el-button type="danger">购买</el-button>
+        </div>
+        <div class="mb-4">
+          <el-button color="#a0cfff" >装置3</el-button>
+        </div>
+        <div class="demo-image">
+            <el-image  style="width: 300px; height: 300px" :src="urlC" fit="contain"></el-image>
+        <div class="demo-image">
+            <el-image  style="width: 40px; height: 40px" :src="urlE" fit="contain"></el-image>
+            133
+        </div>
+        <div class="mb-4">
+        <el-button type="danger">购买</el-button>
+        </div>
+        </div>
+        <div class="mb-4">
+          <el-button color="#a0cfff" >装置4</el-button>
+        </div>
+        <div class="demo-image">
+            <el-image  style="width: 300px; height: 300px" :src="urlD" fit="contain"></el-image>
+        <div class="demo-image">
+            <el-image  style="width: 40px; height: 40px" :src="urlE" fit="contain"></el-image>
+            237
+        </div>
+        </div>
+        <el-button type="danger">购买</el-button>
     </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-const urlA = require("@/assets/A.png") //A图片的位置
-const urlB = require("@/assets/B.png") //B图片的位置
+const urlA = require("@/assets/A.jpg") //A图片的位置
+const urlB = require("@/assets/B.jpg") //B图片的位置
+const urlC = require("@/assets/C.jpg") //C图片的位置
+const urlD = require("@/assets/D.jpg") //D图片的位置
+const urlE = require("@/assets/E.jpg") //E图片的位置
 
-const isImageAShow = ref(true) //图片A是否显示 （默认显示）
-const isImageBShow = ref(false) //图片B是否显示 （默认不显示）
-
-const clickPay = () => //支付按钮按下
-{
-    isImageAShow.value = false //图片A消失
-    isImageBShow.value = true //图片B显示
-}
 </script>

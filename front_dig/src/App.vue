@@ -13,12 +13,12 @@
             <el-icon size="100px">
               <Management />
             </el-icon>
-            <span class="app-menu-title-span-big">数据</span>
-            <span class="app-menu-title-span-small">人文</span>
+            <span class="app-menu-title-span-big">商城</span>
+            <span class="app-menu-title-span-small">中心</span>
           </el-menu-item>
           <div class="flex-grow-10"></div>
           <el-menu-item index="Hfiles">
-            <span class="app-menu-item-span">第一个页面</span>
+            <span class="app-menu-item-span">个人中心</span>
           </el-menu-item>
           <el-switch
             v-model="isDarkModeOpen"

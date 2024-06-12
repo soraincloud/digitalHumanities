@@ -28,7 +28,7 @@ const loadMove = async () =>
     if(isBuy.value == "1")
     {
         isMove.value = true
-        await Sleep(14200)
+        await Sleep(14000)
         isMove.value = false
         router.replace({path: '/personal',})
     }

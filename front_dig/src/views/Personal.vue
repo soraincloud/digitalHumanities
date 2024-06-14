@@ -15,6 +15,11 @@ const route = useRouter()
 
 const isBuy = ref(route.currentRoute.value.query.isBuy)
 
+if(isBuy.value == undefined)
+{
+    isBuy.value = "1"
+}
+
 const isEmpty = ref(true)
 const isMove = ref(false)
 const isIn = ref(false)
@@ -29,7 +34,7 @@ function Sleep(ms: number): Promise<void> {
 
 const loadMove = async () =>
 {
-    if(isBuy.value != null)
+    if(isBuy.value == "1" || isBuy.value == "2" || isBuy.value == "3" || isBuy.value == "4")
     {
         isEmpty.value = false
         isMove.value = true

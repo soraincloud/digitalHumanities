@@ -11,20 +11,7 @@
                 <div style="display: flex;align-items: center;">
                     <el-image style="width: 40px; height: 40px; margin-left: 10px;" :src="urlE" fit="contain"></el-image>
                     <p style="margin-left: 10px; font-size: 20px;">316</p>
-                    <el-button style="margin-left:10px;" type="danger" @click="clickBuy(316)">购买</el-button>
-                </div>
-            </el-card>
-            <el-card style="margin: 5px;">
-                <div>
-                    <el-button style="margin: 0px 0px 10px 10px;" color="#a0cfff" >装置3</el-button>
-                </div>
-                <div>
-                    <el-image  style="width: 300px; height: 300px" :src="urlC" fit="contain"></el-image>
-                </div>
-                <div style="display: flex;align-items: center;">
-                    <el-image style="width: 40px; height: 40px; margin-left: 10px;" :src="urlE" fit="contain"></el-image>
-                    <p style="margin-left: 10px; font-size: 20px;">133</p>
-                    <el-button style="margin-left:10px;" type="danger" @click="clickBuy(133)">购买</el-button>
+                    <el-button style="margin-left:10px;" type="danger" @click="clickBuy(316,1)">购买</el-button>
                 </div>
             </el-card>
             <el-card style="margin: 5px;">
@@ -37,7 +24,20 @@
                 <div style="display: flex;align-items: center;">
                     <el-image style="width: 40px; height: 40px; margin-left: 10px;" :src="urlE" fit="contain"></el-image>
                     <p style="margin-left: 10px; font-size: 20px;">176</p>
-                    <el-button style="margin-left:10px;" type="danger" @click="clickBuy(176)">购买</el-button>
+                    <el-button style="margin-left:10px;" type="danger" @click="clickBuy(176,2)">购买</el-button>
+                </div>
+            </el-card>
+            <el-card style="margin: 5px;">
+                <div>
+                    <el-button style="margin: 0px 0px 10px 10px;" color="#a0cfff" >装置3</el-button>
+                </div>
+                <div>
+                    <el-image  style="width: 300px; height: 300px" :src="urlC" fit="contain"></el-image>
+                </div>
+                <div style="display: flex;align-items: center;">
+                    <el-image style="width: 40px; height: 40px; margin-left: 10px;" :src="urlE" fit="contain"></el-image>
+                    <p style="margin-left: 10px; font-size: 20px;">133</p>
+                    <el-button style="margin-left:10px;" type="danger" @click="clickBuy(133,3)">购买</el-button>
                 </div>
             </el-card>
             <el-card style="margin: 5px;">
@@ -50,7 +50,7 @@
                 <div style="display: flex;align-items: center;">
                     <el-image style="width: 40px; height: 40px; margin-left: 10px;" :src="urlE" fit="contain"></el-image>
                     <p style="margin-left: 10px; font-size: 20px;">237</p>
-                    <el-button style="margin-left:10px;" type="danger" @click="clickBuy(237)">购买</el-button>
+                    <el-button style="margin-left:10px;" type="danger" @click="clickBuy(237,4)">购买</el-button>
                 </div>
             </el-card>
         </el-scrollbar>
@@ -87,10 +87,13 @@ const dialogVisible = ref(false)
 
 const greenCostNow = ref("0")
 
-const clickBuy = (num:any) =>
+const isChosed = ref("1")
+
+const clickBuy = (num:any,id:any) =>
 {
     greenCostNow.value = num
     dialogVisible.value = true
+    isChosed.value = id
 }
 
 const clickConfirm = () =>
@@ -100,7 +103,7 @@ const clickConfirm = () =>
         path: '/personal',
         query:
         {
-            isBuy: 1,
+            isBuy: isChosed.value,
         },
     })
 }

@@ -1,8 +1,8 @@
 <template>
     <div>
         <el-image v-if="isEmpty" :src="urlBox" fit="contain"></el-image>
-        <el-image v-if="isMove" :src="urlInBox" fit="contain"></el-image>
-        <el-image v-if="isIn" :src="urlIntoBox" fit="contain"></el-image>
+        <el-image v-if="isMove" :src="urlPlay" fit="contain"></el-image>
+        <el-image v-if="isIn" :src="urlAfter" fit="contain"></el-image>
     </div>
 </template>
 
@@ -13,14 +13,14 @@ import { useRouter } from 'vue-router';
 
 const route = useRouter()
 
+const isBuy = ref(route.currentRoute.value.query.isBuy)
+
 const isEmpty = ref(true)
 const isMove = ref(false)
 const isIn = ref(false)
 const urlBox = require("@/assets/box.png")
-const urlInBox = require("@/assets/inBox.gif")
-const urlIntoBox = require("@/assets/intoBox.png")
-
-const isBuy = ref(route.currentRoute.value.query.isBuy)
+const urlPlay = require("@/assets/play" + isBuy.value + ".gif")
+const urlAfter = require("@/assets/after" + isBuy.value + ".png")
 
 function Sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -29,13 +29,12 @@ function Sleep(ms: number): Promise<void> {
 
 const loadMove = async () =>
 {
-    if(isBuy.value == "1")
+    if(isBuy.value != null)
     {
         isEmpty.value = false
         isMove.value = true
-        await Sleep(14000)
+        await Sleep(20000)
         isMove.value = false
-        router.replace({path: '/personal',})
         isIn.value = true
     }
 }

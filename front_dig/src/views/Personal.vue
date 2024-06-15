@@ -35,7 +35,7 @@ function Sleep(ms: number): Promise<void> {
 
 const loadMove = async () =>
 {
-    if(isPlay)
+    if(isPlay.value)
     {
         isEmpty.value = false
         isMove.value = true

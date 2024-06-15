@@ -4,7 +4,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'main',
-    redirect: '/home',
+    redirect: '/login',
   },
   {
     path: '/home',
@@ -15,6 +15,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/personal',
     name: 'personal',
     component: () => import('@/views/Personal.vue'),
+  },
+  {
+    path: '/login',
+    name: '/login',
+    component: () => import('@/views/login.vue')
   },
 ]
 

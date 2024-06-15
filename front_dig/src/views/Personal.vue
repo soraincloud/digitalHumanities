@@ -7,7 +7,6 @@
 </template>
 
 <script lang="ts" setup>
-import router from '@/router';
 import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 

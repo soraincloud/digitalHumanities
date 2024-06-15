@@ -13,10 +13,12 @@ import { useRouter } from 'vue-router';
 const route = useRouter()
 
 const isBuy = ref(route.currentRoute.value.query.isBuy)
+const isPlay = ref(true)
 
 if(isBuy.value == undefined)
 {
     isBuy.value = "1"
+    isPlay.value = false
 }
 
 const isEmpty = ref(true)
@@ -33,7 +35,7 @@ function Sleep(ms: number): Promise<void> {
 
 const loadMove = async () =>
 {
-    if(isBuy.value == "1" || isBuy.value == "2" || isBuy.value == "3" || isBuy.value == "4")
+    if(isPlay)
     {
         isEmpty.value = false
         isMove.value = true

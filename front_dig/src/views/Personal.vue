@@ -25,7 +25,7 @@ const isEmpty = ref(true)
 const isMove = ref(false)
 const isIn = ref(false)
 const urlBox = require("@/assets/box.png")
-const urlPlay = require("@/assets/play" + isBuy.value + ".gif")
+const urlPlay = require("@/assets/" + isBuy.value + ".gif")
 const urlAfter = require("@/assets/after" + isBuy.value + ".png")
 
 function Sleep(ms: number): Promise<void> {
@@ -39,9 +39,6 @@ const loadMove = async () =>
     {
         isEmpty.value = false
         isMove.value = true
-        await Sleep(20000)
-        isMove.value = false
-        isIn.value = true
     }
 }
 
